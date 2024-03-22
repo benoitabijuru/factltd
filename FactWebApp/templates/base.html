@@ -1,0 +1,49 @@
+<!-- base.html -->
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}FACT WEB{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'FactWebApp/css/base.css' %}">
+    {% block extrastyles %}{% endblock %}
+</head>
+<body>
+
+<nav>
+    <div class="logo">LOGO</div>
+    <ul class="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="#">Design</a></li>
+        <li><a href="#">Research</a></li>
+        <li><a href="#">Video</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Public Relation</a></li>
+    </ul>
+</nav>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    <div class="footer-left">
+        <p>&copy; All Rights Reserved</p>
+    </div>
+    <div class="footer-right">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+    </div>
+</footer>
+
+</body>
+</html>

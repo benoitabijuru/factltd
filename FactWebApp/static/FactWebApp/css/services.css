@@ -1,0 +1,21 @@
+.services-container {
+    margin: 20px 18px;
+}
+
+.services-container h1 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.services-container h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.services-container p{
+    font-size: 14px;
+}
+
+.service-image {
+    max-width: 100%;
+    height: auto;
+}

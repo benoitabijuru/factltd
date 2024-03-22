@@ -1,29 +1,19 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FACT WEB</title>
-</head>
-<body>
+{% block title %}
+Home - FACT WEB
+{% endblock %}
 
-<nav>
-    <div class="logo">LOGO</div>
-    <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Design</a></li>
-        <li><a href="#">Research</a></li>
-        <li><a href="#">Video</a></li>
-        <li><a href="#">Team</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Public Relation</a></li>
-    </ul>
-</nav>
+{% block content %}
+<img src="{% static 'FactWebApp/images/home_image.jpg' %}" alt="Home Image">
+<div class="content">
+    <p class="center-text">Our fact is our Reality Action</p>
+    <button class="get-in-touch-btn">Get in Touch</button>
+</div>
+{% endblock %}
 
-</body>
-</html>
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/index.css' %}">
+{% endblock %}
