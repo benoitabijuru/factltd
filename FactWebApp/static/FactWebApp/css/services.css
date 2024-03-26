@@ -1,21 +1,17 @@
 .services-container {
-    margin: 20px 18px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
 }
 
-.services-container h1 {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-.services-container h2 {
-    font-size: 14px;
-    margin-bottom: 20px;
-}
-
-.services-container p{
-    font-size: 14px;
+.service {
+    flex-basis: 30%;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.service-image {
-    max-width: 100%;
-    height: auto;
+.service h2 {
+    margin-top: 0;
 }

@@ -40,7 +40,7 @@ nav {
     color: blue;
 }
 
-.footer {
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -48,12 +48,24 @@ nav {
     padding: 20px;
 }
 
-.social-media-icons a {
-    color: #333;
-    text-decoration: none;
-    margin-right: 10px;
+.footer-left p{
+    color: white;
 }
 
-.social-media-icons a:last-child {
+.footer-right a {
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.footer-right a:hover{
+    color: blue;
+}
+
+.footer-right a:last-child {
     margin-right: 0;
 }
+
+
+

@@ -1,0 +1,13 @@
+.about-container {
+    padding: 20px;
+}
+
+.about-container h1 {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.about-image {
+    max-width: 100%;
+    height: auto;
+}

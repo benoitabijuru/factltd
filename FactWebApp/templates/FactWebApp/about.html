@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}About - FACT WEB {% endblock %}
+
+{% block content %}
+<div class="about-container">
+    <h1>About Us</h1>
+    <p>The architecture and construction are sign of development,
+        it either seed despondency or elation, the architecture never be neutral. 
+        For us we want to have healing power, dignity, freedom and independence throughout architecture 
+        and construction. Our contemplation is that our projects point out development in whole neighborhood. FACT is better able to deliver quality projects for our clients and partners while supporting the local economy with local purchasing, education, and job creation. FACT’s goal is to be a 
+        change maker in the construction industry-advancing ethics and impact, while meeting project targets.</p>
+
+    <h1>Our Mission: Our fact is our Reality Action</h1>
+    <p>FACT was founded on the understanding that architecture’s influence reaches beyond individual 
+        buildings. FACT (Focus on Architecture & Construction Technology) believes that architecture 
+        has a critical role to play in supporting communities to confront history, shape new narratives,
+        collectively heal and project new possibilities for the future, Through sustainable design approach.
+        We work as architects, landscape architects, engineers, builders, furniture designers, writers and 
+        researchers and our base are Rwanda (Kigali-Kacyiru). We believe in design that respect the existing 
+        environment(the human and nature have great relationship and building is home of human , why we 
+        cannot bring nature inside to keep strong relationship between nature and humanity). 
+        Again, we believe in expanding access to design that is purposeful, healing, and hopeful.</p>
+
+    <img src="{% static 'FactWebApp/images/service_image.jpg' %}" alt="About Image">
+
+    <h1>Approach</h1>
+    <p>We believe that every project has a mission, and we collaborate with our partners 
+        throughout the design process from early visioning through project completion to develop 
+        and implement a shared vision to achieve that mission. We do this through architecture, 
+        landscape design, furniture design, engineering, planning, research, construction, film, 
+        and community engagement. Helping build a climate positive future is imperative. Our pro
+        jects move beyond just issues of energy use and efficiency, to holistically design the 
+        project ecosystem, including an entire supply chain that is sustainable, resilient, and 
+        regenerative. We work using a One Health design strategy that produces diverse, healthy,
+        and productive habitats for human, animal, and ecological growth</p>
+
+    <img src="{% static 'FactWebApp/images/about_image.jpg' %}" alt="About Image">
+</div>
+{% endblock %}
+
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/about.css' %}">
+{% endblock %}
+
