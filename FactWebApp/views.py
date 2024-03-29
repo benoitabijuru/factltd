@@ -23,3 +23,9 @@ def design(request):
 
 def video(request):
     return render(request, 'FactWebApp/video.html')
+
+def careers(request):
+    return render(request, 'FactWebApp/careers.html')
+
+def research(request):
+    return render(request, 'FactWebApp/research.html')
