@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+News - FACT WEB
+{% endblock %}
+
+{% block content %}
+
+<div class="news-container">
+<h1>Latest News</h1>
+<div class="news-grid">
+    <div class="news-content">
+        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 1">
+        <h3>News title</h3>
+        <h4>Posted date</h4>
+        <h4>Magazine name</h4>
+    </div>
+
+    <div class="news-content">
+        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 2">
+        <h3>News title</h3>
+        <h4>Posted date</h4>
+        <h4>Magazine name</h4>
+    </div>
+
+    <div class="news-content">
+        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 3">
+        <h3>News title</h3>
+        <h4>Posted date</h4>
+        <h4>Magazine name</h4>
+    </div>
+
+    <div class="news-content">
+        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 3">
+        <h3>News title</h3>
+        <h4>Posted date</h4>
+        <h4>Magazine name</h4>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}
+
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/news.css' %}">
+{% endblock %}

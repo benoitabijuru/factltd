@@ -1,0 +1,22 @@
+.news-container {
+    padding: 20px;
+}
+
+.news-grid
+ {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+
+.news-content img
+ {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 50%;
+}
+
+.news-content h4{
+    font-weight: normal;
+    padding: 2px;
+}

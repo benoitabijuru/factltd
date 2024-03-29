@@ -1,4 +1,7 @@
-.services-container {
+
+body{
+    padding-left: 20px;
+}.services-container {
     padding: 20px;
     display: flex;
     justify-content: space-between;
