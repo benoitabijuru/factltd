@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Design - FACT WEB
+{% endblock %}
+
+{% block content %}
+<div class="design-container">
+    <h1>Design</h1>
+    <div class="filter-options">
+        <select id="design-type">
+            <option value="all">All Design Types</option>
+            <option value="health">Health</option>
+            <option value="housing">Housing</option>
+            <option value="memorial">Memorial</option>
+            <option value="education">Education</option>
+            <option value="office">Office Space</option>
+            <option value="other">Other</option>
+        </select>
+        <select id="country">
+            <option value="all">All Countries</option>
+            <option value="rwanda">Rwanda</option>
+            <option value="burundi">Burundi</option>
+            <option value="kenya">Kenya</option>
+            <option value="uganda">Uganda</option>
+            <option value="tanzania">Tanzania</option>
+        </select>
+    </div>
+    <div class="design-grid">
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+
+        <div class="design-item">
+            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
+            <h3>Design title</h3>
+            <p>Location name</p>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
+
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/design.css' %}">
+{% endblock %}

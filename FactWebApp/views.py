@@ -17,3 +17,6 @@ def team(request):
 
 def news(request):
     return render(request, 'FactWebApp/news.html')
+
+def design(request):
+    return render(request, 'FactWebApp/design.html')

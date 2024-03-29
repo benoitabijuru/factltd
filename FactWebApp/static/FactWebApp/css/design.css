@@ -1,0 +1,31 @@
+.design-container {
+    padding: 20px;
+}
+
+.filter-options {
+    margin-bottom: 20px;
+}
+
+.design-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+}
+
+.design-item {
+    text-align: center;
+}
+
+.design-item img {
+    width: 100%;
+    max-width: 300px; 
+}
+
+.design-item h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.design-item p {
+    color: #666;
+}
