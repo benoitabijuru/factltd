@@ -20,3 +20,6 @@ def news(request):
 
 def design(request):
     return render(request, 'FactWebApp/design.html')
+
+def video(request):
+    return render(request, 'FactWebApp/video.html')
