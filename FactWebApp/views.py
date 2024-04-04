@@ -12,9 +12,6 @@ def services(request):
 def contact(request):
     return render(request, 'FactWebApp/contact.html')
 
-def team(request):
-    return render(request, 'FactWebApp/team.html')
-
 def news(request):
     return render(request, 'FactWebApp/news.html')
 
