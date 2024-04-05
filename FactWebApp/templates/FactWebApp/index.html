@@ -7,7 +7,11 @@ Home - FACT WEB
 {% endblock %}
 
 {% block content %}
-<img src="{% static 'FactWebApp/images/home_image.jpg' %}" alt="Home Image">
+
+{% for image in images %}
+    <img src="{{ image.image.url }}" alt="{{ image.title }}">
+{% endfor %}
+
 <div class="content">
     <p class="center-text">Our fact is our Reality Action</p>
     <button class="get-in-touch-btn">Get in Touch</button>

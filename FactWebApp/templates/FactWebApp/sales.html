@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Sales - FACT WEB
+{% endblock %}
+
+{% block content %}
+
+<h1>Buy our products</h1>
+
+<div class="products">
+    <div class="product">
+        <img src="{% static 'FactWebApp/images/design.jpg' %}" alt="Design">
+        <h2>Design Title</h2>
+        <p>Description of the design goes here.</p>
+        <button class="order-btn" onclick="orderProduct('design')">Order</button>
+    </div>
+    <div class="product">
+        <img src="{% static 'FactWebApp/images/design.jpg' %}" alt="Design">
+        <h2>Design Title</h2>
+        <p>Description of the design goes here.</p>
+        <button class="order-btn" onclick="orderProduct('design')">Order</button>
+    </div>
+    <div class="product">
+        <img src="{% static 'FactWebApp/images/design.jpg' %}" alt="Design">
+        <h2>Design Title</h2>
+        <p>Description of the design goes here.</p>
+        <button class="order-btn" onclick="orderProduct('design')">Order</button>
+    </div>
+
+    <div class="product">
+        <img src="{% static 'FactWebApp/images/book.jpg' %}" alt="Book">
+        <h2>Book Title</h2>
+        <p>Author Name</p>
+        <button class="order-btn" onclick="orderProduct('book')">Order</button>
+    </div>
+    <div class="product">
+        <img src="{% static 'FactWebApp/images/book.jpg' %}" alt="Book">
+        <h2>Book Title</h2>
+        <p>Author Name</p>
+        <button class="order-btn" onclick="orderProduct('book')">Order</button>
+    </div>
+
+</div>
+
+
+{% endblock %}
+
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/sales.css' %}">
+{% endblock %}
+
+{% block extrascripts %}
+<script>
+    function orderProduct(productType) {
+        window.location.href = "{% url 'checkout' %}?product_type=" + productType;
+    }
+</script>
+{% endblock %}

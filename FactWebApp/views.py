@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from .models import Image
 
 def index(request):
-    return render(request, 'FactWebApp/index.html')
+    image = Image.objects.first()
+    return render(request, 'FactWebApp/index.html', {'image': image})
 
 def about(request):
     return render(request, 'FactWebApp/about.html')
@@ -26,3 +28,9 @@ def careers(request):
 
 def research(request):
     return render(request, 'FactWebApp/research.html')
+
+def sales(request):
+    return render(request, "FactWebApp/sales.html")
+
+def checkout(request):
+    return render(request, "FactWebApp/checkout.html")
