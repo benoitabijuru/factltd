@@ -24,7 +24,9 @@
         cannot bring nature inside to keep strong relationship between nature and humanity). 
         Again, we believe in expanding access to design that is purposeful, healing, and hopeful.</p>
 
-    <img src="{% static 'FactWebApp/images/service_image.jpg' %}" alt="About Image">
+        {% for mission_image in mission_images %}
+        <img src="{{ mission_image.image.url }}" alt="{{ mission_image.description }}">
+        {% endfor %}
 
     <h1>Approach</h1>
     <p>We believe that every project has a mission, and we collaborate with our partners 
@@ -37,7 +39,9 @@
         regenerative. We work using a One Health design strategy that produces diverse, healthy,
         and productive habitats for human, animal, and ecological growth</p>
 
-    <img src="{% static 'FactWebApp/images/about_image.jpg' %}" alt="About Image">
+        {% for approach_image in approach_images %}
+        <img src="{{ approach_image.image.url }}" alt="{{ approach_image.description }}">
+        {% endfor %}
 </div>
 {% endblock %}
 

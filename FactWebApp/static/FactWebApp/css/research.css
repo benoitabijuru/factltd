@@ -16,8 +16,8 @@
 .tools-item img,
 .training-item img{
     width: 100%;
-    max-width: 200px;
-    border-radius: 50%;
+    height: 200px;
+    border-radius: 10px;
 }
 
 .research-item h3,

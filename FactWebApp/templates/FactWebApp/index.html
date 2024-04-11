@@ -8,13 +8,15 @@ Home - FACT WEB
 
 {% block content %}
 
-{% for image in images %}
-    <img src="{{ image.image.url }}" alt="{{ image.title }}">
-{% endfor %}
+<div class="image-container">
+    {% for image in images %}
+        <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
+    {% endfor %}
+</div>
 
 <div class="content">
     <p class="center-text">Our fact is our Reality Action</p>
-    <button class="get-in-touch-btn">Get in Touch</button>
+    <a href="{% url 'contact' %}" class="get-in-touch">Get in Touch</a>
 </div>
 {% endblock %}
 

@@ -8,7 +8,7 @@ Design - FACT WEB
 
 {% block content %}
 <div class="design-container">
-    <h1>Design</h1>
+    <h1>Here are some of our designs</h1>
     <div class="filter-options">
         <select id="design-type">
             <option value="all">All Design Types</option>
@@ -20,60 +20,39 @@ Design - FACT WEB
             <option value="other">Other</option>
         </select>
     </div>
-    <div class="design-grid">
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
+    <div class="design-grid" >
+        {% for design_image in design_images %}
+        <div class="design-item" data-category="{{ design_image.category }}">
+            <img src="{{ design_image.image.url }}" alt="{{ design_image.description }}">
+            <h3>{{ design_image.title }}</h3>
+            <p>{{ design_image.location }}</p>
         </div>
-
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
-            
-        </div>
-
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
-        </div>
-
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
-        </div>
-
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
-        </div>
-
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
-        </div>
-
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
-        </div>
-
-        <div class="design-item">
-            <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Design Item 1">
-            <h3>Design title</h3>
-            <p>Location name</p>
-        </div>
-        
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
 
 {% block extrastyles %}
 <link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/design.css' %}">
+{% endblock %}
+
+{% block extrascripts %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const designTypeSelect = document.getElementById("design-type");
+        const designItems = document.querySelectorAll(".design-item");
+
+        designTypeSelect.addEventListener("change", function() {
+            const selectedCategory = this.value;
+            designItems.forEach(function(item) {
+                const itemCategory = item.dataset.category;
+                if (selectedCategory === "all" || selectedCategory === itemCategory) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
 {% endblock %}

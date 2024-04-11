@@ -9,117 +9,55 @@ Research - FACT WEB
 {% block content %}
 
 <div class="research-container">
-<h1>Design Labs</h1>
-<div class="research-grid">
-    <div class="research-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Research Item 1">
-        <h3>Title</h3>
-        <p>Description</p>
+    <h1>Design Labs</h1>
+    <div class="research-grid">
+        {% for lab_image in lab_images %}
+        <div class="research-item">
+            <img src="{{ lab_image.image.url }}" alt="{{ lab_image.title }}">
+            <h3>{{ lab_image.title }}</h3>
+            <p>{{ lab_image.description }}</p>
+        </div>
+        {% endfor %}
     </div>
-</div>
 </div>
 
-<div class="research-grid">
-    <div class="research-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Research Item 2">
-        <h3>Title</h3>
-        <p>Description</p>
+<div class="research-container">
+    <h1>Studies</h1>
+    <div class="research-grid">
+        {% for study_image in study_images %}
+        <div class="research-item">
+            <img src="{{ study_image.image.url }}" alt="{{ study_image.title }}">
+            <h3>{{ study_image.title }}</h3>
+            <p>{{ study_image.description }}</p>
+        </div>
+        {% endfor %}
     </div>
-</div>
 </div>
 
-<div class="research-grid">
-    <div class="research-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Research Item 3">
-        <h3>Title</h3>
-        <p>Description</p>
+<div class="research-container">
+    <h1>Tools</h1>
+    <div class="research-grid">
+        {% for tool_image in tool_images %}
+        <div class="research-item">
+            <img src="{{ tool_image.image.url }}" alt="{{ tool_image.title }}">
+            <h3>{{ tool_image.title }}</h3>
+            <p>{{ tool_image.description }}</p>
+        </div>
+        {% endfor %}
     </div>
-</div>
 </div>
 
-<h1>Studies</h1>
-<div class="studies-grid">
-    <div class="studies-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Studies Item 1">
-        <h3>Title</h3>
-        <p>Description</p>
+<div class="research-container">
+    <h1>Training</h1>
+    <div class="research-grid">
+        {% for training_image in training_images %}
+        <div class="research-item">
+            <img src="{{ training_image.image.url }}" alt="{{ training_image.title }}">
+            <h3>{{ training_image.title }}</h3>
+            <p>{{ training_image.description }}</p>
+        </div>
+        {% endfor %}
     </div>
-</div>
-</div>
-
-<div class="studies-grid">
-    <div class="studies-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Studies Item 2">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
-
-<div class="studies-grid">
-    <div class="studies-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Studies Item 3">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
-
-<h1>Tools</h1>
-<div class="tools-grid">
-    <div class="tools-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Tools Item 1">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
-
-<div class="tools-grid">
-    <div class="tools-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Tools Item 2">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
-
-<div class="tools-grid">
-    <div class="tools-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Tools Item 3">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
-
-<h1>Training</h1>
-<div class="training-grid">
-    <div class="training-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Training Item 1">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
-
-<div class="training-grid">
-    <div class="training-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Training Item 2">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
-
-<div class="training-grid">
-    <div class="training-item">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="Training Item 3">
-        <h3>Title</h3>
-        <p>Description</p>
-    </div>
-</div>
-</div>
 </div>
 
 {% endblock %}
