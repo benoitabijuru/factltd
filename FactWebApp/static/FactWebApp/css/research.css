@@ -9,7 +9,7 @@
 }
 
 .video-item {
-   color:green;
+   text-align: start;
 }
 
 video {
@@ -20,7 +20,4 @@ video {
 h3 {
     margin-top: 10px;
     margin-bottom: 5px;
-}
-.research-pragraph{
-   
-}
+};
