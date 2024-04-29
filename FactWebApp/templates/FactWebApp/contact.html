@@ -11,7 +11,8 @@ Contact - FACT WEB
 <div class="contact-container">
     <h1>Love to hear from you,<br>
         Get in touch</h1>
-    <form action="#" method="post">
+    <form id="contact-form" action="#" method="POST">
+        {% csrf_token %}
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" required>
         
@@ -32,4 +33,43 @@ Contact - FACT WEB
 
 {% block extrastyles %}
 <link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/contact.css' %}">
+{% endblock %}
+
+{% block extrascripts %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the contact form
+        const contactForm = document.getElementById('contact-form');
+    
+        // Add submit event listener to the form
+        contactForm.addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+    
+            // Simulate form submission (you can replace this with AJAX submission if needed)
+            fetch('/save-contact-message/', {
+                method: 'POST',
+                body: new FormData(contactForm)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Show the pop-up message
+                    alert(data.message);
+    
+                    // Optionally, you can clear the form fields after submission
+                    contactForm.reset();
+                } else {
+                    // Show error message if the submission fails
+                    alert('Failed to send message. Please try again.');
+                }
+            })
+            .catch(error => {
+                // Handle any network or server errors
+                console.error('Error:', error);
+                alert('An error occurred while sending the message.');
+            });
+        });
+    });
+</script>
 {% endblock %}

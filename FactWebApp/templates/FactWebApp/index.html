@@ -8,11 +8,11 @@ Home - FACT WEB
 
 {% block content %}
 
-<div class="image-container">
-    {% for image in images %}
+{% for image in images %}
+    {% if image.category.name == 'home' %}
         <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
-    {% endfor %}
-</div>
+    {% endif %}
+{% endfor %}
 
 <div class="content">
     <p class="center-text">Our fact is our Reality Action</p>

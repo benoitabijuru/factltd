@@ -25,7 +25,7 @@
         Again, we believe in expanding access to design that is purposeful, healing, and hopeful.</p>
 
         {% for mission_image in mission_images %}
-        <img src="{{ mission_image.image.url }}" alt="{{ mission_image.description }}">
+        <img src="{{ mission_image.image.url }}" alt="{{ mission_image.title }}">
         {% endfor %}
 
     <h1>Approach</h1>
@@ -40,7 +40,7 @@
         and productive habitats for human, animal, and ecological growth</p>
 
         {% for approach_image in approach_images %}
-        <img src="{{ approach_image.image.url }}" alt="{{ approach_image.description }}">
+        <img src="{{ approach_image.image.url }}" alt="{{ approach_image.title }}">
         {% endfor %}
 </div>
 {% endblock %}

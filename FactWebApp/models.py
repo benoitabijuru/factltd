@@ -1,59 +1,31 @@
 from django.db import models
 
-class homeImage(models.Model):
-    title = models.CharField(max_length=100)
+class ImageCategory(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Image(models.Model):
     image = models.ImageField(upload_to='images/')
+    title = models.CharField(max_length=100, default='Title')
+    description = models.TextField()
+    location = models.CharField(max_length=100, default='Location')
+    category = models.ForeignKey(ImageCategory, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, default='Name')  
+    role = models.CharField(max_length=100, default='Role')  
 
     def __str__(self):
         return self.title
     
-class aboutImages(models.Model):
-    image = models.ImageField(upload_to='about_images/')
-    description = models.TextField()
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=200, blank=True)
+    message = models.TextField()
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.description
-    
-class designImages(models.Model):
-    image = models.ImageField(upload_to='design_images/')
-    title = models.CharField(max_length=100, default='Unknown')
-    location = models.CharField(max_length=100, default='Unknown')
-    description = models.TextField()
-    category = models.CharField(max_length=100, default='Other')
-
-    def __str__(self):
-        return self.title
-    
-class designLabImages(models.Model):
-    image = models.ImageField(upload_to='design_labs/')
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.title
-
-class studiesImages(models.Model):
-    image = models.ImageField(upload_to='studies/')
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.title
-
-class toolsImages(models.Model):
-    image = models.ImageField(upload_to='tools/')
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.title
-
-class trainingImages(models.Model):
-    image = models.ImageField(upload_to='training/')
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.title
+        return f"{self.name} - {self.subject}"
 
 

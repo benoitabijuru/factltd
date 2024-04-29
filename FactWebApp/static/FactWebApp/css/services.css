@@ -1,8 +1,12 @@
 h1{
     font-weight: normal;
 }
-.services-container {
+
+.description{
     padding: 20px;
+}
+.services-container {
+    padding: 40px;
     display: flex;
     justify-content: space-between;
 }
