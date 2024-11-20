@@ -12,7 +12,6 @@ urlpatterns = [
     path('video/', views.video, name='video'),
     path('careers/', views.careers, name='careers'),
     path('research/', views.research, name='research'),
-    path('sales/', views.sales, name='sales'),
     path('checkout/', views.checkout, name='checkout'),
     
 ]
