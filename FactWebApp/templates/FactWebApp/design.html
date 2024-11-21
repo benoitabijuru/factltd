@@ -10,15 +10,11 @@ Design - FACT WEB
 <div class="design-container">
     <h1>Here are some of our designs</h1>
     <div class="filter-options">
-        <select id="design-type">
-            <option value="all">All Design Types</option>
-            <option value="health">Health</option>
-            <option value="housing">Housing</option>
-            <option value="memorial">Memorial</option>
-            <option value="education">Education</option>
-            <option value="office">Office Space</option>
-            <option value="other">Other</option>
-        </select>
+        <div class="design-item" data-category="{{ design_image.category }}">
+            <img src="{{ design_image.image.url }}" alt="{{ design_image.description }}">
+            <h3>{{ design_image.title }}</h3>
+            <p>{{ design_image.location }}</p>
+        </div>
     </div>
     <div class="design-grid">
         {% for design_image in design_images %}

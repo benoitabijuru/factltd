@@ -9,7 +9,7 @@ Services - FACT WEB
 {% block content %}
 
     <div class="description">
-    <h1>What we offer</h1>
+    <h1>What we provide to our clients</h1>
     <p>At FACT, we offer a comprehensive range of services to meet all your architectural and 
         construction needs. From innovative architectural design solutions to expert construction 
         management and sustainable design consulting, our team is dedicated to delivering excellence 
@@ -20,7 +20,6 @@ Services - FACT WEB
     <div class="services-container">
         <div class="service">
             <h2>Architecture Design</h2>
-            <img src="/staticimages/Services1.jpg" alt="#" class="service-imge">
             <p>We offer comprehensive architectural design services tailored to meet your specific 
                 needs. Our team of experienced architects will work closely with you to develop 
                 innovative and sustainable design solutions that enhance the functionality, aesthetics,
@@ -29,7 +28,12 @@ Services - FACT WEB
         </div>
         <div class="service">
             <h2>Construction Management</h2>
-            <img src="/staticimages/services2.jpg" alt="#" class="service-imge">
+            <!-- for image of service-->
+            {% for image in images %}
+            {% if image.category.name == 'service2' %}
+            <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
+            {% endif %}
+                {% endfor %}
             <p>Our construction management services are designed to ensure that your project is 
                 completed on time, within budget, and to the highest quality standards. From project 
                 planning and scheduling to contractor management and quality control, we'll oversee 
@@ -38,7 +42,11 @@ Services - FACT WEB
         </div>
         <div class="service">
             <h2>Sustainable Design Consulting</h2>
-            <img src="/staticimages/Services1.jpg" alt="#" class="service-imge">
+            {% for image in images %}
+            {% if image.category.name == 'service' %}
+            <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
+            {% endif %}
+                {% endfor %}
             <p>We specialize in sustainable design consulting, helping clients minimize their 
                 environmental impact and maximize their energy efficiency. Our team will assess your 
                 project's environmental footprint and develop strategies to reduce energy consumption, 
@@ -47,6 +55,7 @@ Services - FACT WEB
             </p>
         </div>
     </div>
+    <div class="reference-service"><a href="#">see some of our completed projects</a></div>
 
 {% endblock %}
 

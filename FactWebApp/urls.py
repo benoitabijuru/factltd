@@ -1,6 +1,7 @@
 from django.urls import path
 from FactWebApp import views
 
+
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
@@ -12,6 +13,5 @@ urlpatterns = [
     path('video/', views.video, name='video'),
     path('careers/', views.careers, name='careers'),
     path('research/', views.research, name='research'),
-    path('checkout/', views.checkout, name='checkout'),
-    
+    path('checkout/', views.checkout, name='checkout'),   
 ]

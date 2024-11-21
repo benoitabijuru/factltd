@@ -29,3 +29,9 @@ class ContactMessage(models.Model):
         return f"{self.name} - {self.subject}"
 
 
+class Service(models.Model):
+    title = models.CharField(max_length=100) 
+    description = models.TextField()
+    serviceimage=models.ImageField( default='/media/services/Services1.jpg', blank='TRUE', upload_to='media/services')
+    def __str__(self):
+        return f"{self.title} - {'Available' if self.available else 'Not Available'}"
