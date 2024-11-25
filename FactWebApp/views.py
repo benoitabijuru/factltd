@@ -2,6 +2,12 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from .models import Image, ImageCategory
 from .models import ContactMessage
+from .models import Service
+
+def service_list(request):
+    services = Service.objects.all()
+    return render(request, 'service_list.html', {'services': services})
+
 
 def index(request):
     home_category = ImageCategory.objects.get(name='home')  # Assuming 'home' is the name of the home category

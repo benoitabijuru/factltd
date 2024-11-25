@@ -55,13 +55,13 @@ Contact - FACT WEB
             .then(data => {
                 if (data.success) {
                     // Show the pop-up message
-                    alert(data.message);
+                    alert("thank you for reaching out Fact Ltd, we will contact you shortly for further support");
     
                     // Optionally, you can clear the form fields after submission
                     contactForm.reset();
                 } else {
                     // Show error message if the submission fails
-                    alert('Failed to send message. Please try again.');
+                    alert('Failed to send message. Please chech wether you have network.');
                 }
             })
             .catch(error => {

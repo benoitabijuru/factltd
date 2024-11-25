@@ -21,7 +21,7 @@
     margin-bottom: 50px;
 }
 
-.team-grid {
+.team-grid, .board-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
@@ -36,8 +36,8 @@
 .board-member img {
     width: 100%;
     max-width: 200px;
-    height: auto;
-    border-radius: 50%;
+    height: 250px;
+    
 }
 
 .team-member h3,
