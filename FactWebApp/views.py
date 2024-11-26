@@ -1,13 +1,10 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-from .models import Image, ImageCategory
-from .models import ContactMessage
-from .models import Service
+from .models import *
 
-def service_list(request):
+def service(request):
     services = Service.objects.all()
-    return render(request, 'service_list.html', {'services': services})
-
+    return render(request, 'FactWebApp/Services.html', {'service': services})
 
 def index(request):
     home_category = ImageCategory.objects.get(name='home')  # Assuming 'home' is the name of the home category
@@ -79,15 +76,20 @@ def research(request):
     study_images = Image.objects.filter(category__name='study')
     tool_images = Image.objects.filter(category__name='tool')
     training_images = Image.objects.filter(category__name='training')
+    service_image=Image.objects.filter(category_name='service')
     return render(request, 'FactWebApp/research.html', {
         'lab_images': lab_images,
         'study_images': study_images,
         'tool_images': tool_images,
         'training_images': training_images
+    
     })
+# for service added secondly
 
-def sales(request):
-    return render(request, "FactWebApp/sales.html")
+from django.shortcuts import render
+from .models import Service
 
-def checkout(request):
-    return render(request, "FactWebApp/checkout.html")
+def services(request):
+    services = Service.objects.all()  # Fetch all services
+    return render(request, 'services.html', {'services': services})
+#for services added secondly ends

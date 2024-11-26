@@ -28,14 +28,15 @@ class ContactMessage(models.Model):
     def __str__(self):
         return f"{self.name} - {self.subject}"
 
-
 class Service(models.Model):
-    title = models.CharField(max_length=100) 
-    description = models.TextField()
-    available = models.BooleanField(default=True)
-    serviceimage=models.ImageField( default='/media/services/Services1.jpg', blank='TRUE', upload_to='media/services')
+    service_title = models.CharField(max_length=150, default="Default Service Title")  # Default title
+    image = models.ImageField(upload_to='media/images')  # Default image path
+    description = models.TextField(default="this services is provided by Fact ltd, which is located in Kigali.")  # Default description
+
     def __str__(self):
-        return f"{self.title} - {'Available' if self.available else 'Not Available'}"
+        return self.service_title
+
+
 
 class Video(models.Model):
     title = models.CharField(max_length=100)
@@ -45,12 +46,3 @@ class Video(models.Model):
 
     def __str__(self):
         return self.title
-    
-
-    class team_image(models.Model):
-        image=models.ImageField(upload_to='media/images')
-        names=models.TextField(blank=False)
-        position=models.TextField(blank=True)
-
-        def __str__(self):
-           return self.image,self.names, self.position

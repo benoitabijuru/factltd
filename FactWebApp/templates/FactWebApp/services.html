@@ -18,20 +18,27 @@ Services - FACT WEB
     </div>
     
     <div class="services-container">
-        <div class="service">
-            <h2>Architecture Design</h2>
-            <p>We offer comprehensive architectural design services tailored to meet your specific 
-                needs. Our team of experienced architects will work closely with you to develop 
-                innovative and sustainable design solutions that enhance the functionality, aesthetics,
-                and value of your project.
-            </p>
+        <!---starting of service 1-->
+        <div>
+            {% for service in services %}
+                <div>
+                    <h2>{{ service.service_title }}</h2>
+                    <img src="{{ service.image.url }}" alt="{{ service.service_title }}" style="width:300px; height:auto;">
+                    <p>{{ service.description }}</p>
+                </div>
+                <hr>
+            {% empty %}
+                <p>No services available at the moment.</p>
+            {% endfor %}
         </div>
+
+        <!--services end-->
         <div class="service">
             <h2>Construction Management</h2>
-            <!-- for image of service-->
+            
             {% for image in images %}
             {% if image.category.name == 'service2' %}
-            <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
+            <img class="image" src="{{image.image.url }}" alt="{{ image.title }}">
             {% endif %}
                 {% endfor %}
             <p>Our construction management services are designed to ensure that your project is 

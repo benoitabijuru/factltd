@@ -11,12 +11,12 @@ Videos - FACT WEB
     <h1>Documentaires</h1>
     <h1>Video List</h1>
     <ul>
-        {% for video in Video %}
+        {% for video in videos %}
         <li>
             <h2>{{ video.title }}</h2>
             <p>{{ video.description }}</p>
             <video width="320" height="240" controls>
-                <source src="{{ video.video_file.url }}" type="video/mp4">
+                <source src="{{ video_file.Video.url }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </li>
@@ -24,7 +24,7 @@ Videos - FACT WEB
     </ul>
 
 
-    <div class="video-grid">
+    <!--<div class="video-grid">
         <div class="video-item">
             <video controls>
                 <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
@@ -77,6 +77,7 @@ Videos - FACT WEB
             <h3>Video Title 3</h3>
         </div>
     </div>
+    --->
 </div>
 {% endblock %}
 
