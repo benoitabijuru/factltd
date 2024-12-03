@@ -15,32 +15,13 @@ Services - FACT WEB
         management and sustainable design consulting, our team is dedicated to delivering excellence 
         in every project. With a focus on creativity, functionality, and sustainability, we strive to 
         exceed our clients' expectations and create spaces that inspire, endure, and enrich lives.</p>
-    </div>
+
+                
+</div>
     
     <div class="services-container">
-        <!---starting of service 1-->
-        <div>
-            {% for service in services %}
-                <div>
-                    <h2>{{ service.service_title }}</h2>
-                    <img src="{{ service.image.url }}" alt="{{ service.service_title }}" style="width:300px; height:auto;">
-                    <p>{{ service.description }}</p>
-                </div>
-                <hr>
-            {% empty %}
-                <p>No services available at the moment.</p>
-            {% endfor %}
-        </div>
-
-        <!--services end-->
         <div class="service">
             <h2>Construction Management</h2>
-            
-            {% for image in images %}
-            {% if image.category.name == 'service2' %}
-            <img class="image" src="{{image.image.url }}" alt="{{ image.title }}">
-            {% endif %}
-                {% endfor %}
             <p>Our construction management services are designed to ensure that your project is 
                 completed on time, within budget, and to the highest quality standards. From project 
                 planning and scheduling to contractor management and quality control, we'll oversee 
@@ -48,12 +29,14 @@ Services - FACT WEB
             </p>
         </div>
         <div class="service">
-            <h2>Sustainable Design Consulting</h2>
-            {% for image in images %}
-            {% if image.category.name == 'service' %}
-            <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
-            {% endif %}
-                {% endfor %}
+            <h2>Construction Management</h2>
+            <p>Our construction management services are designed to ensure that your project is 
+                completed on time, within budget, and to the highest quality standards. From project 
+                planning and scheduling to contractor management and quality control, we'll oversee 
+                every aspect of the construction process to ensure a successful outcome.
+            </p>
+        </div>
+        <div class="service">
             <p>We specialize in sustainable design consulting, helping clients minimize their 
                 environmental impact and maximize their energy efficiency. Our team will assess your 
                 project's environmental footprint and develop strategies to reduce energy consumption, 
