@@ -10,7 +10,7 @@ Design - FACT WEB
 <div class="design-container">
     <h1>Here are some of our designs</h1>
     <div class="filter-options">
-        <div class="design-item" data-category="{{ design_image.category }}">
+        <div  data-category="{{ design_image.category }}">
             <img src="{{ design_image.image.url }}" alt="{{ design_image.description }}">
             <h3>{{ design_image.title }}</h3>
             <p>{{ design_image.location }}</p>
@@ -50,5 +50,18 @@ Design - FACT WEB
             });
         });
     });
+
+    // section for added JavaScripts
+    document.addEventListener("DOMContentLoaded", function () {
+        const designGrid = document.querySelector(".design-grid");
+
+        // Adding smooth scroll functionality
+        designGrid.addEventListener("wheel", function (e) {
+            e.preventDefault();
+            designGrid.scrollLeft += e.deltaY;
+        });
+    });
+
+
 </script>
 {% endblock %}
