@@ -1,11 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from .models import *
-
-def service(request):
-    services = Service.objects.all()
-    return render(request, 'FactWebApp/Services.html', {'service': services})
-
 def index(request):
     home_category = ImageCategory.objects.get(name='home')  # Assuming 'home' is the name of the home category
     images = Image.objects.filter(category=home_category)
@@ -21,6 +16,8 @@ def about(request):
     return render(request, 'FactWebApp/about.html', {'mission_images': mission_images, 'approach_images': approach_images})
 
 def services(request):
+    home_category = ImageCategory.objects.get(name='home') 
+    images = Image.objects.filter(category=home_category)
     return render(request, 'FactWebApp/services.html')
 
 def contact(request):
@@ -55,7 +52,8 @@ def design(request):
     return render(request, 'FactWebApp/design.html', {'design_images': design_images})
 
 def video(request):
-    return render(request, 'FactWebApp/video.html')
+    videos = Video.objects.all()  # Fetch all videos from the database
+    return render(request, 'FactWebApp/video.html', {'videos': videos})
 
 def careers(request):
     try:
@@ -76,20 +74,12 @@ def research(request):
     study_images = Image.objects.filter(category__name='study')
     tool_images = Image.objects.filter(category__name='tool')
     training_images = Image.objects.filter(category__name='training')
-    service_image=Image.objects.filter(category_name='service')
     return render(request, 'FactWebApp/research.html', {
         'lab_images': lab_images,
         'study_images': study_images,
         'tool_images': tool_images,
-        'training_images': training_images
+        'training_images': training_images,
+       
     
-    })
-# for service added secondly
-
-from django.shortcuts import render
-from .models import Service
-
-def services(request):
-    services = Service.objects.all()  # Fetch all services
-    return render(request, 'services.html', {'services': services})
-#for services added secondly ends
+    }
+    )

@@ -1,26 +1,128 @@
+/* Styling the design container */
+.design-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading styling */
+.design-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styling the filter options */
+.filter-options {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Design grid for horizontal scrolling */
+.design-grid {
+    display: flex;
+    overflow-x: scroll; /* Allow horizontal scrolling */
+    white-space: nowrap;
+    gap: 15px;
+    padding: 10px 0;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    position: relative;
+}
+
+/* Individual design item styling */
+.design-item {
+    flex: 0 0 auto; /* Prevent items from shrinking or growing */
+    width: 300px;
+    text-align: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.design-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.design-item h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.design-item p {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Hover effect */
+.design-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom scrollbar styling */
+.design-grid::-webkit-scrollbar {
+    height: 8px; /* Horizontal scrollbar height */
+}
+
+.design-grid::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar thumb color */
+    border-radius: 4px;
+}
+
+.design-grid::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Scrollbar thumb hover color */
+}
+
+.design-grid::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Scrollbar track color */
+}
+
+/*
 .design-container {
     padding: 20px;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    gap: 10px;
 }
 
 .filter-options {
     margin-bottom: 20px;
+    
 }
 
 .design-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px; 
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    gap: 10px;
+    
 }
-
+.design-grid::-webkit-scrollbar {
+    height: 8px;
+}
 .design-item {
     text-align: center;
 }
 
 .design-item img {
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-    object-fit: cover;
+    flex: 0 0 auto;
+            width: 300px; 
+            height: auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
 }
 
 .design-item h3 {
@@ -30,5 +132,6 @@
 
 .design-item p {
     color: #666;
-    font-display: italic;
+    font-display: italic
 }
+*/

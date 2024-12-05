@@ -39,9 +39,9 @@ class Service(models.Model):
 
 
 class Video(models.Model):
+    video_file = models.FileField(upload_to='videos/') # Upload path for videos
     title = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    video_file = models.FileField(upload_to='videos/')  # Upload path for videos
+    description = models.TextField(blank=True) 
     uploaded_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

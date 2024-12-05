@@ -1,23 +1,67 @@
+/* Container styling */
 .videos-container {
     padding: 20px;
-}
-
-.video-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px;
-}
-
-.video-item {
+    max-width: 1200px;
+    margin: 0 auto;
     text-align: center;
 }
 
-video {
-    width: 100%;
-    max-width: 300px; 
+.videos-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
 }
 
+/* Grid styling */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Individual video item */
+.video-item {
+    background: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Video styling */
+video {
+    width: 100%;
+    max-width: 300px; /* Consistent maximum width */
+    height: 200px;    /* Fixed height */
+    object-fit: cover; /* Ensures the content fits within the specified dimensions */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+/* Title and description styling */
 h3 {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
 }

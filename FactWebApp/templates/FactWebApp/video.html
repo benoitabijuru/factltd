@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-
 {% load static %}
 
 {% block title %}
@@ -8,79 +7,95 @@ Videos - FACT WEB
 
 {% block content %}
 <div class="videos-container">
-    <h1>Documentaires</h1>
-    <h1>Video List</h1>
-    <ul>
+    <h1>Our Videos</h1>
+    <div class="video-grid">
         {% for video in videos %}
-        <li>
-            <h2>{{ video.title }}</h2>
-            <p>{{ video.description }}</p>
-            <video width="320" height="240" controls>
-                <source src="{{ video_file.Video.url }}" type="video/mp4">
+        <div class="video-item">
+            <video controls>
+                <source src="{{ video.video_file.url }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
-        </li>
+            <h3>{{ video.title }}</h3>
+            <p>{{ video.description }}</p>
+        </div>
+        {% empty %}
+        <p>No videos available at the moment.</p>
         {% endfor %}
-    </ul>
-
-
-    <!--<div class="video-grid">
-        <div class="video-item">
-            <video controls>
-                <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
-            </video>
-            <h3>Video Title 1</h3>
-        </div>
-
-        <div class="video-item">
-            <video controls>
-                <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
-            </video>
-            <h3>Video Title 2</h3>
-        </div>
-
-        <div class="video-item">
-            <video controls>
-                <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
-            </video>
-            <h3>Video Title 3</h3>
-        </div>
-
-        <div class="video-item">
-            <video controls>
-                <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
-            </video>
-            <h3>Video Title 4</h3>
-        </div>
     </div>
-
-    <h1>Talks</h1>
-    <div class="video-grid">
-        <div class="video-item">
-            <video controls>
-                <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
-            </video>
-            <h3>Video Title 1</h3>
-        </div>
-
-        <div class="video-item">
-            <video controls>
-                <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
-            </video>
-            <h3>Video Title 2</h3>
-        </div>
-
-        <div class="video-item">
-            <video controls>
-                <source src="{% static 'FactWebApp/videos/video1.mp4' %}" type="video/mp4">
-            </video>
-            <h3>Video Title 3</h3>
-        </div>
-    </div>
-    --->
 </div>
 {% endblock %}
+<!-- Starting of video-related JavaScripts-->
+{% block extrajavascript %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Select all video elements after DOM is loaded
+    const videos = document.querySelectorAll('video');
 
+    // Function to handle video hover effect (play on hover, no sound)
+    videos.forEach(video => {
+        // Play video on hover
+        video.addEventListener('mouseover', () => {
+            video.play();
+            video.muted = true; // Mute the video on hover
+        });
+
+        // Pause video when hover ends
+        video.addEventListener('mouseout', () => {
+            video.pause();
+            video.currentTime = 0; // Reset video to start
+        });
+
+        // On click, open the video in expanded mode (without full-screen)
+        video.addEventListener('click', () => {
+            // Create a div for the video modal view
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.background = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '9999';
+
+            // Create a video element for the modal
+            const modalVideo = document.createElement('video');
+            modalVideo.src = video.src; // Ensure the correct video is opened
+            modalVideo.controls = true;
+            modalVideo.style.maxWidth = '90%'; // Responsive size
+            modalVideo.style.maxHeight = '90%'; // Keep aspect ratio intact
+
+            // Append modal video and modal container to the body
+            modal.appendChild(modalVideo);
+            document.body.appendChild(modal);
+
+            // Play the video in the modal
+            modalVideo.play();
+
+            // Close modal when clicked
+            modal.addEventListener('click', () => {
+                document.body.removeChild(modal);
+            });
+        });
+    });
+
+    // Disable simultaneous video play on the same page
+    videos.forEach(video => {
+        video.addEventListener('play', () => {
+            videos.forEach(otherVideo => {
+                if (otherVideo !== video) {
+                    otherVideo.pause();
+                    otherVideo.currentTime = 0; // Reset the video
+                }
+            });
+        });
+    });
+});
+</script>
+{% endblock %}
+<!-- End of JavaScript code-->
 {% block extrastyles %}
 <link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/video.css' %}">
 {% endblock %}

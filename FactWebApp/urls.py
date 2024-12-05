@@ -14,9 +14,7 @@ urlpatterns = [
     path('design/', views.design, name='design'),
     path('video/', views.video, name='video'),
     path('careers/', views.careers, name='careers'),
-    path('research/', views.research, name='research'),
-    path('services/', views.services, name='services'),  
-
+    path('research/', views.research, name='research')
 ]
 
 urlpatterns=urlpatterns+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
