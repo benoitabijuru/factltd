@@ -79,7 +79,5 @@ def research(request):
         'study_images': study_images,
         'tool_images': tool_images,
         'training_images': training_images,
-       
-    
     }
     )
