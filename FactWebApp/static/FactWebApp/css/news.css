@@ -1,22 +1,58 @@
-.news-container {
-    padding: 20px;
+/* Basic reset and styling for the grid container */
+.news-container>h1{
+    margin:40px;
 }
-
-.news-grid
- {
+.news-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  /* Automatically adjusts to 3 or 4 columns */
+    gap: 20px; /* Space between the grid items */
+    padding: 20px;
+    justify-items: center; /* Center content within grid items */
+    margin-left:50px;
+    margin-right: 50px;
 }
 
-.news-content img
- {
-    width: 100%;
-    max-width: 200px;
-    border-radius: 50%;
+/* Styling for individual news items */
+.news-item {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
 }
 
-.news-content h4{
-    font-weight: normal;
-    padding: 2px;
+/* Image styling */
+.news-item img {
+    width: 300px;  /* Makes images responsive */
+    height: auto;
+    border-bottom: 1px solid #ddd;
+    object-fit: cover;  /* Ensures images cover the container without stretching */
+    margin-bottom: 10px;
+    max-height: 200px; /* Limit the image height */
+}
+
+/* Title and description styling */
+.news-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.news-item p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Responsive design: Make it 3 columns on medium screens and 2 columns on smaller screens */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(1fr); /*1 columumns*/
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: repeat(1fr); /*1 columumns*/
+    }
 }
