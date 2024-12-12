@@ -1,4 +1,7 @@
 from django.db import models
+from django.utils.timezone import now
+from django.core.exceptions import ValidationError
+from django.utils.timezone import now
 
 class ImageCategory(models.Model):
     name = models.CharField(max_length=100)
@@ -13,7 +16,17 @@ class Image(models.Model):
     location = models.CharField(max_length=100, default='Location')
     category = models.ForeignKey(ImageCategory, on_delete=models.CASCADE)
     name = models.CharField(max_length=100, default='Name')  
-    role = models.CharField(max_length=100, default='Role')  
+    role = models.CharField(max_length=100, default='Role')
+    posted_date = models.DateTimeField(default=now)
+    magazine_type=models.TextField(default='Architectural magazine')  # Default to the current date/time
+
+    def clean(self):
+        """Custom validation to ensure posted_date is not in the future."""
+        if self.posted_date > now():
+            raise ValidationError("Posted date cannot be in the future.")
+
+    def __str__(self):
+        return self.title
 
     def __str__(self):
         return self.title
@@ -35,7 +48,6 @@ class Service(models.Model):
 
     def __str__(self):
         return self.service_title
-
 
 
 class Video(models.Model):

@@ -5,7 +5,7 @@
 <head>
     <!--<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> ---!-->
-    <title>{% block title %}FACT WEB{% endblock %}</title>
+    <title>{% block title %}PLACIDE HAKIZIMANA WEB{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{% static 'FactWebApp/css/base.css' %}">
     {% block extrastyles %}{% endblock %}
@@ -14,16 +14,14 @@
 <body>
 
 <nav>
-    <div class="logo">FACT LTD</div>
+    <div class="logo">HAKIM</div>
     <ul class="nav-links">
         <li><a href="{% url 'index' %}">Home</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'services' %}">Services</a></li>
-        <li><a href="{% url 'design' %}">Design</a></li>
-        <li><a href="{% url 'research' %}">Research</a></li>
-        <li><a href="{% url 'video' %}">Video</a></li>
-        <li><a href="{% url 'news' %}">News</a></li>
-        <li><a href="{% url 'careers' %}">Careers</a></li>
+        <li><a href="{% url 'design' %}">projects</a></li>
+        <li><a href="{% url 'video' %}">video</a></li>
+        <li><a href="{% url 'research' %}">our clients</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
         
     </ul>
@@ -34,7 +32,7 @@
 
 <footer>
     <div class="footer-left">
-        <p>FactWeb &copy;2024. All Rights Reserved</p>
+        <p>hakizimana &copy;2024. All Rights Reserved</p>
     </div>
     <div class="footer-right">
         <a href="#"><i class="fab fa-whatsapp"></i></a>

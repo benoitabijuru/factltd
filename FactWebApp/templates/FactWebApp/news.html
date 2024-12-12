@@ -3,45 +3,24 @@
 {% load static %}
 
 {% block title %}
-News - FACT WEB
+News - PLACIDE HAKIZIMANA WEB
 {% endblock %}
 
 {% block content %}
-
 <div class="news-container">
-<h1>Latest News</h1>
+    <h1>Latest News</h1>
+</div>
+
 <div class="news-grid">
-    <div class="news-content">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 1">
-        <h3>News title</h3>
-        <h4>Posted date</h4>
-        <h4>Magazine name</h4>
+    {% for news_image in news_images %}
+    <div class="news-item" data-category="{{ news_image.category }}">
+        <img src="{{ news_image.image.url }}" alt="{{ news_image.description }}">
+        <p>{{ news_image.description}}</p>
+        <p>{{ news_image.description}}</p>
+        <p>{{ news_image.posted_date|date:"Y-m-d" }}</p>
     </div>
-
-    <div class="news-content">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 2">
-        <h3>News title</h3>
-        <h4>Posted date</h4>
-        <h4>Magazine name</h4>
-    </div>
-
-    <div class="news-content">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 3">
-        <h3>News title</h3>
-        <h4>Posted date</h4>
-        <h4>Magazine name</h4>
-    </div>
-
-    <div class="news-content">
-        <img src="{% static 'FactWebApp/images/member1.jpg' %}" alt="News content 3">
-        <h3>News title</h3>
-        <h4>Posted date</h4>
-        <h4>Magazine name</h4>
-    </div>
-
+    {% endfor %}
 </div>
-</div>
-
 {% endblock %}
 
 {% block extrastyles %}

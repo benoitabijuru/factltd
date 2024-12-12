@@ -7,6 +7,7 @@ from .models import Service;
 from .models import Video;
 
 
+
 #customizing admin panel
 admin.site.register(Image)
 admin.site.register(ImageCategory)
