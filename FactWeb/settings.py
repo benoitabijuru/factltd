@@ -258,3 +258,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+TIME_ZONE = 'Africa/Kigali'
+USE_TZ = True  # Ensure this is set to True to enable time zone support
