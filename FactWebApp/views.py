@@ -41,7 +41,10 @@ def team(request):
     return render(request, 'FactWebApp/team.html')
 
 def news(request):
-    return render(request, 'FactWebApp/news.html')
+    #return render(request, 'FactWebApp/news.html')
+    news_category = ImageCategory.objects.get(name='news')  # Assuming 'design' is the name of the design category
+    news_images = Image.objects.filter(category=news_category)
+    return render(request, 'FactWebApp/news.html', {'news_images': news_images})
 
 from django.shortcuts import render
 from .models import Image, ImageCategory
