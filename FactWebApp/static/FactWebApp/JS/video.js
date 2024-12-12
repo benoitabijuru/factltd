@@ -1,34 +1,3 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block title %}
-Videos - PLACIDE HAKIZIMANA WEB
-{% endblock %}
-
-{% block content %}
-<div class="videos-container">
-    <h1>Our Videos</h1>
-    <div class="video-grid">
-        {% for video in videos %}
-        <div class="video-item">
-            <video controls>
-                <source src="{{ video.video_file.url }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <h3>{{ video.title }}</h3>
-            <p>{{ video.description }}</p>
-        </div>
-        {% empty %}
-        <p>No videos available at the moment.</p>
-        {% endfor %}
-    </div>
-</div>
-{% endblock %}
-<<<<<<< HEAD
-
-<!-- Starting of video-related JavaScripts-->
-{% block extrajavascript %}
-<script>
 document.addEventListener('DOMContentLoaded', () => {
     // Select all video elements after DOM is loaded
     const videos = document.querySelectorAll('video');
@@ -101,16 +70,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-</script>
-{% endblock %}
-
-=======
->>>>>>> 7ad9768131b6c7b0fec1d2206667f259d5e1a2d4
-{% block extrastyles %}
-<link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/video.css' %}">
-{% endblock %}
-
-{% block extrajavascript %}
-<script src="{% static 'FactWebApp/JS/video.js' %}" defer></script>
-{% endblock %}
-
