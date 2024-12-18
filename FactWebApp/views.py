@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.shortcuts import render
 from .models import *
 def index(request):
     home_category = ImageCategory.objects.get(name='home')  # Assuming 'home' is the name of the home category
@@ -16,11 +17,16 @@ def about(request):
     return render(request, 'FactWebApp/about.html', {'mission_images': mission_images, 'approach_images': approach_images})
 
 def services(request):
-    home_category = ImageCategory.objects.get(name='home') 
-    images = Image.objects.filter(category=home_category)
-    return render(request, 'FactWebApp/services.html')
+    service_category = ImageCategory.objects.get(name='service')  # Assuming 'service' is the name of the service category
+    service_images = Image.objects.filter(category=service_category)
+    context = {
+        'service_images': service_images  # Pass the images to the template
+    }
+
+    return render(request, 'FactWebApp/services.html', context)
 
 def contact(request):
+
     return render(request, 'FactWebApp/contact.html')
 
 def save_contact_message(request):
@@ -36,18 +42,14 @@ def save_contact_message(request):
     elif request.method == 'GET':
         # Return a JSON response indicating that GET requests are not allowed
         return JsonResponse({'success': False, 'message': 'GET requests are not allowed.'})
-
+"""
 def team(request):
-    return render(request, 'FactWebApp/team.html')
-
+    return render(request, 'FactWebApp/checkout.html')
+"""
 def news(request):
-    #return render(request, 'FactWebApp/news.html')
     news_category = ImageCategory.objects.get(name='news')  # Assuming 'design' is the name of the design category
     news_images = Image.objects.filter(category=news_category)
     return render(request, 'FactWebApp/news.html', {'news_images': news_images})
-
-from django.shortcuts import render
-from .models import Image, ImageCategory
 
 def design(request):
     design_category = ImageCategory.objects.get(name='design')  # Assuming 'design' is the name of the design category
@@ -66,11 +68,10 @@ def careers(request):
         team_images = Image.objects.filter(category=team_category)
         board_images = Image.objects.filter(category=board_category)
     except ImageCategory.DoesNotExist:
-        # Handle the case where the 'Team' or 'Board' category does not exist
         team_images = []
         board_images = []
     
-    return render(request, 'FactWebApp/careers.html', {'team_images': team_images, 'board_images': board_images})
+    return render(request, 'FactWebApp/team.html', {'team_images': team_images, 'board_images': board_images})
 
 def research(request):
     lab_images = Image.objects.filter(category__name='lab')

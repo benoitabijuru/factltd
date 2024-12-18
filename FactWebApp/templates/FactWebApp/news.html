@@ -3,23 +3,21 @@
 {% load static %}
 
 {% block title %}
-News - PLACIDE HAKIZIMANA WEB
+News - FACT WEB
 {% endblock %}
 
 {% block content %}
 <div class="news-container">
     <h1>Latest News</h1>
-</div>
-
 <div class="news-grid">
     {% for news_image in news_images %}
     <div class="news-item" data-category="{{ news_image.category }}">
         <img src="{{ news_image.image.url }}" alt="{{ news_image.description }}">
         <p>{{ news_image.description}}</p>
-        <p>{{ news_image.description}}</p>
         <p>{{ news_image.posted_date|date:"Y-m-d" }}</p>
     </div>
     {% endfor %}
+</div>
 </div>
 {% endblock %}
 

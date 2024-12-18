@@ -3,20 +3,33 @@
 {% load static %}
 
 {% block title %}
-Home - PLACIDE HAKIZIMANA WEB
+Home - FACT WEB
 {% endblock %}
 
 {% block content %}
+<div class="main-container">
+    <!-- Grid Section -->
+    <div class="grid-container">
+        <!-- Left Section (75%) -->
+        <div class="image-section">
+            {% for image in images %}
+                {% if image.category.name == 'home' %}
+                    <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
+                {% endif %}
+            {% endfor %}
+        </div>
 
-{% for image in images %}
-    {% if image.category.name == 'home' %}
-        <img class="image" src="{{ image.image.url }}" alt="{{ image.title }}">
-    {% endif %}
-{% endfor %}
+        <!-- Right Section (25%) -->
+        <div class="overview-section">
+            <p class="overview-text">General overview of fact web is here</p>
+        </div>
+    </div>
 
-<div class="content">
-    <p class="center-text">Our fact is our Reality Action</p>
-    <a href="{% url 'contact' %}" class="get-in-touch">Get in Touch</a>
+    <!-- Content Below the Grid -->
+    <div class="content">
+        <p class="center-text">Our fact is our Reality Action</p>
+        <a href="{% url 'contact' %}" class="get-in-touch">Get in Touch</a>
+    </div>
 </div>
 {% endblock %}
 
