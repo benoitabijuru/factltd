@@ -14,7 +14,9 @@
 <body>
 
 <nav>
-    <div class="logo">FACT LTD</div>
+    <div class="logo">
+        <img src="{% static 'logo.jpg' %}" alt="Company Logo" class="logo-img">
+    </div>
     <ul class="nav-links">
         <li><a href="{% url 'index' %}">Home</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
@@ -26,7 +28,6 @@
         <li><a href="{% url 'news' %}">News</a></li>
         <li><a href="{% url 'careers' %}">Careers</a></li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
-        
     </ul>
 </nav>
 
@@ -44,7 +45,6 @@
         <a href="https://x.com/factcustom"><i class="fab fa-twitter"></i></a>
         <a href="https://www.instagram.com/factltd/"><i class="fab fa-instagram"></i></a>
         <a href="https://www.linkedin.com/in/fact-ltd-09a569272/"><i class="fab fa-linkedin"></i></a>
-        
     </div>
 </footer>
 </body>
