@@ -85,3 +85,9 @@ def research(request):
         'training_images': training_images,
     }
     )
+
+
+    from django.shortcuts import render
+
+def career_page_view(request):
+    return render(request, 'FactWebApp/careerspage.html')

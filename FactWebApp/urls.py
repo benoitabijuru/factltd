@@ -13,8 +13,9 @@ urlpatterns = [
     path('video/', views.video, name='video'),
     path('news/', views.news, name='news'),
     path('careers/', views.careers, name='careers'),
+    path('careerpage/', views.career_page_view, name='career_page'),
     path('contact/', views.contact, name='contact'),
     path('save-contact-message/', views.save_contact_message, name='save_contact_message'),
+    #path('checkout/', views.checkout_view, name='checkout'),
 ]
-
 urlpatterns=urlpatterns+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

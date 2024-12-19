@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block title %}
-Careers - PLACIDE HAKIZIMANA WEB
+Careers - FACT WEB
 {% endblock %}
 
 {% block content %}
@@ -36,53 +36,6 @@ Careers - PLACIDE HAKIZIMANA WEB
                 printing is pushing the boundaries of traditional construction methods, offering more 
                 cost-effective and sustainable solutions.
                 </p>
-                    
-
-    <h1>Current Openings</h1>
-
-    <h1>Landing Projects</h1>
-
-</div>
-
-<div class="team-container">
-    <h1>Team</h1>
-    <div class="team-grid">
-        {% for team_image in team_images %}
-        <div class="team-member">
-            <img src="{{ team_image.image.url }}" alt="{{ team_image.description }}">
-            <h3>{{ team_image.name }}</h3>
-            <p>{{ team_image.role }}</p>
-        </div>
-        {% endfor %}
-    </div>
-    
-    <h1>Board of Directors</h1>
-    <div class="board-grid">
-        {% for board_image in board_images %}
-        <div class="board-member">
-            <img src="{{ board_image.image.url }}" alt="{{ board_image.description }}">
-            <h3>{{ board_image.name }}</h3>
-            <p>{{ board_image.role }}</p>
-        </div>
-        {% endfor %}
-    </div>
-    
-    <h1>Partners</h1>
-
-  
-    <div class="partners">
-        <ul class="left">
-            <li>Kigali initiative forum</li>
-            <li>indatwa fine art</li>
-            <li>building and management center kigali</li>
-        </ul> 
-        <ul class="right">
-            <li>Kigali initiative forum</li>
-            <li>indatwa fine art</li>
-            <li>building and management center kigali</li>
-        </ul> 
-    </div>
-    
 </div>
 
 {% endblock %}
