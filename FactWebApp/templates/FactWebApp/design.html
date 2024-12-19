@@ -9,31 +9,63 @@ Design - FACT WEB
 {% block content %}
 <div class="design-container">
     <h1>Here are some of our designs</h1>
+
+    <!-- Dropdown for filtering design categories -->
+    <div class="filter-container">
+        <label for="design-type">Filter by Category:</label>
+        <select id="design-type">
+            <option value="all">All</option>
+            <option value="architecture">Architecture</option>
+            <option value="construction-management">Construction Management</option>
+            <option value="education">Education</option>
+            <option value="research">Research</option>
+            <option value="others">Others</option>
+            {% for category in design_categories %}
+            <option value="{{ category }}">{{ category }}</option>
+            {% endfor %}
+        </select>
+
+    </div>
+
     <div class="design-grid">
         {% for design_image in design_images %}
-        <div class="design-item" data-category="{{ design_image.category }}">
+        <div class="design-item" data-category="{{ design_image.magazine_type }}">
+            <div class="designp">
+                <h3>{{ design_image.title }}</h3>
+                <p>{{ design_image.location }}</p>
+            </div>
             <img src="{{ design_image.image.url }}" alt="{{ design_image.description }}">
-            <h3>{{ design_image.title }}</h3>
-            <p>{{ design_image.location }}</p>
         </div>
         {% endfor %}
     </div>
+    
 </div>
 {% endblock %}
 
 {% block extrastyles %}
 <link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/design.css' %}">
+<style>
+    .filter-container {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    #design-type {
+        padding: 5px;
+        font-size: 1rem;
+    }
+</style>
 {% endblock %}
 
 {% block extrascripts %}
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const designTypeSelect = document.getElementById("design-type");
         const designItems = document.querySelectorAll(".design-item");
 
-        designTypeSelect.addEventListener("change", function() {
+        designTypeSelect.addEventListener("change", function () {
             const selectedCategory = this.value;
-            designItems.forEach(function(item) {
+            designItems.forEach(function (item) {
                 const itemCategory = item.dataset.category;
                 if (selectedCategory === "all" || selectedCategory === itemCategory) {
                     item.style.display = "block";
@@ -42,19 +74,13 @@ Design - FACT WEB
                 }
             });
         });
-    });
 
-    // section for added JavaScripts
-    document.addEventListener("DOMContentLoaded", function () {
+        // Smooth scrolling functionality for the design grid
         const designGrid = document.querySelector(".design-grid");
-
-        // Adding smooth scroll functionality
         designGrid.addEventListener("wheel", function (e) {
             e.preventDefault();
             designGrid.scrollLeft += e.deltaY;
         });
     });
-
-
 </script>
 {% endblock %}

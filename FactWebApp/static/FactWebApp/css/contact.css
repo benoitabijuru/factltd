@@ -27,7 +27,7 @@
 .contact-container textarea {
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid#ccc;
     border-radius: 5px;
 }
 
@@ -65,9 +65,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: #fff;
     padding: 20px;
-    border: 1px solid #ddd;
+    
     border-radius: 5px;
 }
 
@@ -80,9 +80,8 @@
 
 /* Middle Section Styling (Contact Form) */
 .contact-container {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 20px;
-    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
@@ -92,8 +91,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #fff;
     border-radius: 5px;
 }
 
