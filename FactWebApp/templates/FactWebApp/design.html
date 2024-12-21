@@ -8,53 +8,38 @@ Design - FACT WEB
 
 {% block content %}
 <div class="design-container">
-    <h1>Here are some of our designs</h1>
+            <h1>Here are some of our designs</h1>
 
-    <!-- Dropdown for filtering design categories -->
-    <div class="filter-container">
-        <label for="design-type">Filter by Category:</label>
-        <select id="design-type">
-            <option value="all">All</option>
-            <option value="architecture">Architecture</option>
-            <option value="construction-management">Construction Management</option>
-            <option value="education">Education</option>
-            <option value="research">Research</option>
-            <option value="others">Others</option>
-            {% for category in design_categories %}
-            <option value="{{ category }}">{{ category }}</option>
-            {% endfor %}
-        </select>
-
-    </div>
-
-    <div class="design-grid">
-        {% for design_image in design_images %}
-        <div class="design-item" data-category="{{ design_image.magazine_type }}">
-            <div class="designp">
-                <h3>{{ design_image.title }}</h3>
-                <p>{{ design_image.location }}</p>
-            </div>
-            <img src="{{ design_image.image.url }}" alt="{{ design_image.description }}">
+        <!-- Dropdown for filtering design subcategories -->
+        <div class="filter-container">
+            <label for="design-type">Filter by Category:</label>
+            <select id="design-type">
+                <option value="all">All</option>
+                {% for subcategory in design_subcategories %}
+                <option value="{{ subcategory }}">{{ subcategory|title }}</option>
+                {% endfor %}
+            </select>
         </div>
-        {% endfor %}
-    </div>
-    
+
+        <!-- Render designs -->
+        <div class="design-grid">
+            {% for design_image in design_images %}
+            <div class="design-item" data-category="{{ design_image.subcategory }}">
+                <div class="designp">
+                    <h3>{{ design_image.title }}</h3>
+                    <p>{{ design_image.location }}</p>
+                </div>
+                <img src="{{ design_image.image.url }}" alt="{{ design_image.description }}">
+            </div>
+            {% endfor %}
+        </div>
+
 </div>
 {% endblock %}
 
 {% block extrastyles %}
 <link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/design.css' %}">
-<style>
-    .filter-container {
-        margin-bottom: 20px;
-        text-align: left;
-    }
-
-    #design-type {
-        padding: 5px;
-        font-size: 1rem;
-    }
-</style>
+<script src="{% static 'FactWebApp/JS/design.js' %}" defer></script>
 {% endblock %}
 
 {% block extrascripts %}

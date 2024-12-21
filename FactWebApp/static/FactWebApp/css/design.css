@@ -110,4 +110,13 @@
         gap: 10px; /* Ensure spacing remains consistent */
     }
 }
+    .filter-container {
+        margin-bottom: 20px;
+        text-align: left;
+    }
+
+    #design-type {
+        padding: 5px;
+        font-size: 1rem;
+    }
 

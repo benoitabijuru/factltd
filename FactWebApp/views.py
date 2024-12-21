@@ -51,10 +51,18 @@ def news(request):
     news_images = Image.objects.filter(category=news_category)
     return render(request, 'FactWebApp/news.html', {'news_images': news_images})
 
+
 def design(request):
-    design_category = ImageCategory.objects.get(name='design')  # Assuming 'design' is the name of the design category
+    design_category = ImageCategory.objects.get(name='design')  # Main category
     design_images = Image.objects.filter(category=design_category)
-    return render(request, 'FactWebApp/design.html', {'design_images': design_images})
+
+    # Extract distinct subcategories for dropdown
+    design_subcategories = design_images.values_list('subcategory', flat=True).distinct()
+
+    return render(request, 'FactWebApp/design.html', {
+        'design_images': design_images,
+        'design_subcategories': design_subcategories
+    })
 
 def video(request):
     videos = Video.objects.all()  # Fetch all videos from the database
