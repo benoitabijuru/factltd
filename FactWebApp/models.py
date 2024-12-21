@@ -18,7 +18,7 @@ class Image(models.Model):
     name = models.CharField(max_length=100, default='Name')  
     role = models.CharField(max_length=100, default='Role')
     posted_date = models.DateTimeField(default=now) # Default to the current date/time
-    magazine_type=models.TextField(default='Architectural magazine')
+    magazine_type=models.CharField(max_length=100,default='Architectural magazine')
     service_title=models.CharField(max_length=100,default='Architectural and construction service') 
     service_Description=models.TextField()  
 

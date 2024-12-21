@@ -8,7 +8,7 @@
 /* Grid container for the layout */
 .grid-container {
     display: grid;
-    grid-template-columns: 60% 40%; /* 75% for image section, 25% for overview section */
+    grid-template-columns: 70% 30%; /* 70% for image section, 30% for overview section */
     gap: 0px;
     margin: 0 20px; /* Add left and right margin to the grid as a whole */
 }
@@ -26,7 +26,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
     margin: 0; /* Remove all margins around the image itself */
 }
 

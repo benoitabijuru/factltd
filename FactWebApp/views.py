@@ -82,12 +82,8 @@ def research(request):
         'lab_images': lab_images,
         'study_images': study_images,
         'tool_images': tool_images,
-        'training_images': training_images,
+        'training_images': training_images
     }
     )
-
-
-    from django.shortcuts import render
-
 def career_page_view(request):
     return render(request, 'FactWebApp/careerspage.html')
