@@ -8,64 +8,46 @@ Design - FACT WEB
 
 {% block content %}
 <div class="design-container">
-            <h1>Here are some of our designs</h1>
+    <h1>Here are some of our designs</h1>
 
-        <!-- Dropdown for filtering design subcategories -->
-        <div class="filter-container">
-            <label for="design-type">Filter by Category:</label>
-            <select id="design-type">
-                <option value="all">All</option>
-                {% for subcategory in design_subcategories %}
-                <option value="{{ subcategory }}">{{ subcategory|title }}</option>
-                {% endfor %}
-            </select>
-        </div>
-
-        <!-- Render designs -->
-        <div class="design-grid">
-            {% for design_image in design_images %}
-            <div class="design-item" data-category="{{ design_image.subcategory }}">
-                <div class="designp">
-                    <h3>{{ design_image.title }}</h3>
-                    <p>{{ design_image.location }}</p>
-                </div>
-                <img src="{{ design_image.image.url }}" alt="{{ design_image.description }}">
-            </div>
+    <!-- Dropdown for filtering design subcategories -->
+    <div class="filter-container">
+        <label for="design-type">Filter by Category:</label>
+        <select id="design-type">
+            <option value="all">All</option>
+            {% for subcategory in design_subcategories %}
+            <option value="{{ subcategory }}">{{ subcategory|title }}</option>
             {% endfor %}
-        </div>
+        </select>
+    </div>
 
+    <!-- Render designs -->
+    <div class="design-grid">
+        {% for design_image in design_images %}
+        <div class="design-item" data-category="{{ design_image.subcategory }}">
+            <div class="designp">
+                <h3>{{ design_image.title }}</h3>
+                <p>{{ design_image.location }}</p>
+            </div>
+            <img 
+                src="{{ design_image.image.url }}" 
+                alt="{{ design_image.description }}" 
+                data-description="{{ design_image.description }}" 
+                data-magazine-type="{{ design_image.magazine_type }}" 
+                class="design-image"
+            >
+        </div>
+        <!-- Container for displaying additional image details -->
+    <div id="image-details" class="image-details hidden">
+        <h3>Details</h3>
+        <p id="description"></p>
+        <p id="magazine-type"></p>
+    </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
-
 {% block extrastyles %}
 <link rel="stylesheet" type="text/css" href="{% static 'FactWebApp/css/design.css' %}">
 <script src="{% static 'FactWebApp/JS/design.js' %}" defer></script>
-{% endblock %}
-
-{% block extrascripts %}
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const designTypeSelect = document.getElementById("design-type");
-        const designItems = document.querySelectorAll(".design-item");
-
-        designTypeSelect.addEventListener("change", function () {
-            const selectedCategory = this.value;
-            designItems.forEach(function (item) {
-                const itemCategory = item.dataset.category;
-                if (selectedCategory === "all" || selectedCategory === itemCategory) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
-        });
-
-        // Smooth scrolling functionality for the design grid
-        const designGrid = document.querySelector(".design-grid");
-        designGrid.addEventListener("wheel", function (e) {
-            e.preventDefault();
-            designGrid.scrollLeft += e.deltaY;
-        });
-    });
-</script>
 {% endblock %}
