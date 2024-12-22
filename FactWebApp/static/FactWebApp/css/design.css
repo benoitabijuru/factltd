@@ -1,195 +1,91 @@
-/* Text container styling */
-.design-item .text-container {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 10px; /* Add space between title and location */
-    align-items: flex-start; /* Align items to the left */
-}
-
-.design-item h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #000;
-}
-
-.design-item p {
-    margin: 0; /* Remove default margins */
-    font-size: 1rem;
-    color: #000;
-}
-
-
-/* General container styling */
-.design-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-}
-
-/* Grid for design items */
-.design-grid {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    gap: 20px; /* Space between items */
-    align-items: center; /* Center items horizontally */
-}
-
-/* Individual design item */
-.design-item {
-    display: flex;
-    gap: 10px; /* Add space between title and location */
-    align-items: start; /* Align items to the left */
-    flex-direction: row; /* Text on the left, image on the right */
-    width: 80%; /* Adjust width for the overall container */
-    border-radius: 1px;
-    overflow: hidden;
-    background-color: #fff; /* White background */
-}
-
-/* Text section (title and location) */
-.design-item .text-container {
-    flex: 1;
-    padding: 15px;
-    text-align: left; /* Align text to the left */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px; /* Add 10px spacing between title and location */
-}
-
-.design-item h3 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
-}
-
-.design-item p {
-    margin: 0; /* Remove default margins */
-    font-size: 1rem;
-    color: #777;
-}
-
-/* Image styling */
-.design-item img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
-    margin-left: 15px; /* Space between text and image */
-    border-radius: 0; /* Optional: Adjust to match your design */
-}
-
-
-.designp>p,h3{
-    margin: 0px 0px;
-
-}
-.designp {
-    width: 20%; /* Set a fixed width for the container */
-    text-align: left; /* Align text and contents to the left */
-}
-
-.designp > p, .designp > h3 {
-    margin: 20px 0; /* Adjust spacing for p and h3 elements */
-}
-
-
-/* Responsive design for small screens */
-@media (max-width: 768px) {
-    .design-item {
-        flex-direction: column; /* Stack text and image vertically */
-        align-items: center;
-    }
-
-    .design-item img {
-        width: 300px; /* Full width for small screens */
-        height: 300px;
-        margin-left: 0; /* Remove horizontal margin */
-    }
-
-    .design-item .text-container {
-        text-align: center; /* Center text for smaller screens */
-        gap: 10px; /* Ensure spacing remains consistent */
-    }
-}
-    .filter-container {
-        margin-bottom: 20px;
-        text-align: left;
-    }
-
-    #design-type {
-        padding: 5px;
-        font-size: 1rem;
-    }
-
-    /* Zoom effect for the clicked image */
-.design-item img.zoomed {
-    transform: scale(1.5); /* Zoom in */
-    transition: transform 0.3s ease-in-out;
-    z-index: 10;
-}
-
-/* Additional information container */
-.image-details {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #fff;
-}
-
-.hidden {
-    display: none;
-}
-
-
-
-/* Grid Container */
+/* Main Grid Container */
 .design-grid {
     display: grid;
-    gap: 20px;
+    gap: 5px;
+    transition: all 0.3s ease; /* Add transition for smooth effect */
 }
 
 /* Design Item Layout */
 .design-item {
     display: grid;
-    grid-template-columns: 25% 50% 25%; /* 25% - 50% - 25% layout */
-    gap: 10px;
+    grid-template-columns: 25% 50% 25%; /* Left, Center, Right layout */
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     background-color: #fff;
+    width: 75%; /* Center the grid within the container */
+    margin: auto;
+    opacity: 1; /* Ensure items are fully visible initially */
+    transition: opacity 0.3s ease-in-out; /* Add transition for smooth hide/show */
 }
 
-/* Left Section */
+/* Left Section (Title and Location) */
 .design-left {
-    grid-column: 1; /* 1st column */
-    background-color: #fff;
+    grid-column: 1; /* First column */
     padding: 10px;
+    position: relative;
+    z-index: 2;
 }
 
-/* Center Section */
+/* Center Section (Image Display) */
 .design-center {
-    grid-column: 2; /* 2nd column */
+    grid-column: 2; /* Second column */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 10px;
+    position: relative;
 }
 
 .design-center img {
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
-.design-center img.zoomed {
-    transform: scale(1.5); /* Zoom effect */
-}
-
-/* Right Section */
+/* Right Section (Details View) */
 .design-right {
-    grid-column: 3; /* 3rd column */
+    grid-column: 3; /* Third column */
     padding: 10px;
     background-color: #fff;
+    position: relative;
+    z-index: 2;
 }
 
-.hidden {
-    display: none; /* Hide by default */
+/* Hidden Details Section */
+.design-right.hidden {
+    display: none;
+}
+
+/* Hidden Design Item (when filtered out) */
+.design-item.hidden {
+    display: none; /* Ensures the item is hidden when filtered out */
+}
+
+/* Zoom Effect */
+.zoomed {
+    transform: scale(1.5);
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+}
+.design-container{
+    margin: 20px 100px;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .design-item {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        width: 90%; /* Adjust width */
+    }
+
+    .design-center {
+        justify-content: flex-start; /* Align image to the left */
+    }
+
+    .design-right {
+        margin-top: 15px;
+    }
 }

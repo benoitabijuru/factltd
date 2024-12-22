@@ -1,80 +1,65 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const designTypeSelect = document.getElementById("design-type");
-    const designItems = document.querySelectorAll(".design-item");
+document.addEventListener("DOMContentLoaded", () => {
+    const filterDropdown = document.getElementById("design-type"); // Dropdown for filtering
+    const designItems = document.querySelectorAll(".design-item"); // All design items
 
-    designTypeSelect.addEventListener("change", function () {
-        const selectedCategory = this.value;
-        designItems.forEach(function (item) {
-            const itemCategory = item.dataset.category;
-            if (selectedCategory === "all" || selectedCategory === itemCategory) {
-                item.style.display = "block";
+    // Function to filter designs based on the selected category
+    filterDropdown.addEventListener("change", () => {
+        const selectedCategory = filterDropdown.value.toLowerCase(); // Get the selected value
+
+        // Loop through all design items and filter based on category
+        designItems.forEach(item => {
+            const itemCategory = item.dataset.category.toLowerCase(); // Subcategory of the item
+
+            if (selectedCategory === "all" || itemCategory === selectedCategory) {
+                item.classList.remove("hidden"); // Show the item
+                item.style.opacity = 1; // Ensure visible items have full opacity
             } else {
-                item.style.display = "none";
+                item.classList.add("hidden"); // Hide the item
+                item.style.opacity = 0; // Ensure hidden items have no opacity
             }
         });
+
+        // Reset zoom and details when the filter changes
+        resetZoomAndDetails();
     });
 
-    // Smooth scrolling functionality for the design grid
-    const designGrid = document.querySelector(".design-grid");
-    designGrid.addEventListener("wheel", function (e) {
-        e.preventDefault();
-        designGrid.scrollLeft += e.deltaY;
-    });
-});
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    // Select all design images
-    const designImages = document.querySelectorAll(".design-image");
-    const detailsContainer = document.getElementById("image-details");
-    const descriptionElem = document.getElementById("description");
-    const magazineTypeElem = document.getElementById("magazine-type");
-
-    designImages.forEach(image => {
-        image.addEventListener("click", () => {
-            // Remove zoom from any previously zoomed image
-            document.querySelectorAll(".design-image.zoomed").forEach(img => {
-                img.classList.remove("zoomed");
-            });
-
-            // Add zoom effect to the clicked image
-            image.classList.add("zoomed");
-
-            // Fetch data attributes for description and magazine type
-            const description = image.getAttribute("data-description");
-            const magazineType = image.getAttribute("data-magazine-type");
-
-            // Update the details container
-            descriptionElem.textContent = `Description: ${description}`;
-            magazineTypeElem.textContent = `Magazine Type: ${magazineType}`;
-
-            // Show the details container
-            detailsContainer.classList.remove("hidden");
-        });
-    });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const designImages = document.querySelectorAll(".design-image");
-
-    designImages.forEach(image => {
-        image.addEventListener("click", () => {
-            // Reset previously zoomed images and hide details
-            document.querySelectorAll(".zoomed").forEach(zoomedImage => zoomedImage.classList.remove("zoomed"));
-            document.querySelectorAll(".design-right").forEach(details => details.classList.add("hidden"));
+    // Function to handle zoom-in and detail-view on clicking an image
+    document.querySelector(".design-grid").addEventListener("click", event => {
+        if (event.target.classList.contains("design-image")) {
+            // Reset previous zoom and details
+            resetZoomAndDetails();
 
             // Zoom the clicked image
-            image.classList.add("zoomed");
+            const clickedImage = event.target;
+            clickedImage.classList.add("zoomed");
 
-            // Update details on the right
-            const parent = image.closest(".design-item");
-            const details = parent.querySelector(".design-right");
-            const description = image.getAttribute("data-description");
-            const magazineType = image.getAttribute("data-magazine-type");
-
-            details.querySelector("#description").textContent = `Description: ${description}`;
-            details.querySelector("#magazine-type").textContent = `Magazine Type: ${magazineType}`;
-            details.classList.remove("hidden");
-        });
+            // Show details on the right
+            const parentItem = clickedImage.closest(".design-item");
+            const detailsSection = parentItem.querySelector(".design-right");
+            if (detailsSection) {
+                detailsSection.classList.remove("hidden");
+            }
+        }
     });
+
+    // Function to handle double-click for returning to original size
+    document.querySelector(".design-grid").addEventListener("dblclick", event => {
+        if (event.target.classList.contains("design-image") && event.target.classList.contains("zoomed")) {
+            // If image is zoomed, remove the zoom
+            event.target.classList.remove("zoomed");
+
+            // Optionally, hide the details as well
+            const parentItem = event.target.closest(".design-item");
+            const detailsSection = parentItem.querySelector(".design-right");
+            if (detailsSection) {
+                detailsSection.classList.add("hidden");
+            }
+        }
+    });
+
+    // Helper function to reset zoomed images and hide all details
+    function resetZoomAndDetails() {
+        document.querySelectorAll(".zoomed").forEach(zoomedImage => zoomedImage.classList.remove("zoomed"));
+        document.querySelectorAll(".design-right").forEach(details => details.classList.add("hidden"));
+    }
 });
