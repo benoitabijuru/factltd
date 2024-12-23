@@ -12,7 +12,7 @@
     align-items: center;
     padding: 5px;
     background-color: #fff;
-    width: 75%; /* Center the grid within the container */
+    width: 100%; /* Center the grid within the container */
     margin: auto;
     opacity: 1; /* Ensure items are fully visible initially */
     transition: opacity 0.3s ease-in-out; /* Add transition for smooth hide/show */
@@ -37,7 +37,7 @@
 }
 
 .design-center img {
-    max-width: 60%;
+    max-width: 100%;
     height: auto;
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
@@ -49,7 +49,7 @@
 .design-right {
     grid-column: 3; /* Third column */
     padding: 10px;
-    background-color: #fff;
+    background-color: transparent;
     position: relative;
     z-index: 2;
 }
@@ -63,8 +63,6 @@
 .design-item.hidden {
     display: none; /* Ensures the item is hidden when filtered out */
 }
-
-/* Zoom Effect */
 .zoomed {
     transform: scale(1.5);
     z-index: 9999;
@@ -74,6 +72,8 @@
     margin: 100px 100px;
     
 }
+
+
 
 /* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {

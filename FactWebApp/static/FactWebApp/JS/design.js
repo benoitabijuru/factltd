@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", () => {
     const filterDropdown = document.getElementById("design-type"); // Dropdown for filtering
     const designItems = document.querySelectorAll(".design-item"); // All design items
