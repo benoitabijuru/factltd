@@ -28,7 +28,7 @@ Design - FACT WEB
             <!-- Left Section -->
             <div class="design-left">
                 <h3>{{ design_image.title }}</h3>
-                <p>{{ design_image.location }}</p>
+                <p>{{ design_image.posted_date }}</p>
             </div>
 
             <!-- Center Section -->
@@ -44,8 +44,8 @@ Design - FACT WEB
 
             <!-- Right Section (hidden by default) -->
             <div class="design-right hidden">
-                <p id="description">Description: {{ design_image.description }}</p>
-                <p id="magazine-type">Magazine Type: {{ design_image.magazine_type }}</p>
+                <p id="description">{{ design_image.location }}</p>
+                <p id="magazine-type">{{ design_image.description }}</p>
             </div>
         </div>
         {% endfor %}

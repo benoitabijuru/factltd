@@ -1,0 +1,116 @@
+.careers-container {
+    max-width: 800px;
+    margin: 20px 200px;
+    padding: 20px;
+    
+}
+
+.careers-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.careers-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.team-container {
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+.team-grid, .board-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.team-member,
+.board-member {
+    align-items: center;
+}
+
+.team-member img,
+.board-member img {
+    width: 100%;
+    max-width: 100%;
+    height: 300px;
+    
+}
+
+.team-member h3,
+.board-member h3 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color:#333
+}
+
+.team-member p,
+.board-member p{
+    margin-bottom: 20px;
+    color: #333
+}
+ h1,
+ h1{
+    margin-bottom: 20px;
+    color: #333;
+    margin-left:200px;
+}
+
+
+.partners {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.partners h3 {
+    margin-bottom: 10px;
+}
+
+.left {
+    flex: 1;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+.right {
+    flex: 1;
+    font-size: 18px;
+}
+
+.careers-container h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.careers-container p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.opening {
+    margin-bottom: 20px;
+}
+
+.opening h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.opening p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+

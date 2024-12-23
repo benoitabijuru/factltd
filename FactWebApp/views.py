@@ -26,8 +26,10 @@ def services(request):
     return render(request, 'FactWebApp/services.html', context)
 
 def contact(request):
+    contact_category = ImageCategory.objects.get(name='contact')  # Assuming 'design' is the name of the design category
+    contact_images = Image.objects.filter(category=contact_category)
 
-    return render(request, 'FactWebApp/contact.html')
+    return render(request, 'FactWebApp/contact.html',{'contact_images':contact_images})
 
 def save_contact_message(request):
     if request.method == 'POST':

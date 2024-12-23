@@ -71,7 +71,8 @@
     transition: transform 0.3s ease-in-out;
 }
 .design-container{
-    margin: 20px 100px;
+    margin: 100px 100px;
+    
 }
 
 /* Responsive Design for Smaller Screens */
