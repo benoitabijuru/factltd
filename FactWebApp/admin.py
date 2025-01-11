@@ -21,6 +21,11 @@ class ImageAdmin(admin.ModelAdmin):
     search_fields = ('title', 'description')
 
 
+# Customizing the admin site header and titles
+admin.site.site_header = "Welcome To Fact ltd Admin Page"
+admin.site.site_title = "Admin Dashboard For Fact Ltd"
+admin.site.index_title = "Welcome to the Fact Ltd Admin Dashboard"
+
 
 
 

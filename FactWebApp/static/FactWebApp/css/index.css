@@ -31,10 +31,9 @@
 
 /* Right section (overview section) */
 .overview-section {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
 }
 
 /* Content Below the Grid */

@@ -1,19 +1,19 @@
 /* Main Grid Container */
 .design-grid {
     display: grid;
-    gap: 5px;
+    gap: 0;
     transition: all 0.3s ease; /* Add transition for smooth effect */
 }
 
 /* Design Item Layout */
 .design-item {
     display: grid;
-    grid-template-columns: 25% 50% 25%; /* Left, Center, Right layout */
+    grid-template-columns: 0% 73% 25%; /* Left, Center, Right layout */
     align-items: center;
     padding: 5px;
     background-color: #fff;
     width: 100%; /* Center the grid within the container */
-    margin: auto;
+    margin: 5px 5px;
     opacity: 1; /* Ensure items are fully visible initially */
     transition: opacity 0.3s ease-in-out; /* Add transition for smooth hide/show */
 }
@@ -21,17 +21,16 @@
 /* Left Section (Title and Location) */
 .design-left {
     grid-column: 1; /* First column */
-    padding: 10px;
+    padding: 0px;
     position: relative;
-    z-index: 2;
 }
 
 /* Center Section (Image Display) */
 .design-center {
     grid-column: 2; /* Second column */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: start;
+    align-items: start;
     padding: 10px;
     position: relative;
 }
@@ -48,23 +47,29 @@
 /* Right Section (Details View) */
 .design-right {
     grid-column: 3; /* Third column */
-    padding: 10px;
+    padding: 2px;
     background-color: transparent;
     position: relative;
     z-index: 2;
+    transition: opacity 0.55s ease-in-out;
+    vertical-align: top;
 }
 
 /* Hidden Details Section */
 .design-right.hidden {
     display: none;
+    transition: opacity 0.55s ease-in-out;
+    vertical-align: top;
 }
 
 /* Hidden Design Item (when filtered out) */
 .design-item.hidden {
-    display: none; /* Ensures the item is hidden when filtered out */
+    display: none;
+    transition: opacity 0.55s ease-in-out; 
+    vertical-align: top;
 }
 .zoomed {
-    transform: scale(1.5);
+    transform: scale(1.0);
     z-index: 9999;
     transition: transform 0.3s ease-in-out;
 }

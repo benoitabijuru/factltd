@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Function to handle double-click for returning to original size
+    // Function to handle click for returning to original size
     document.querySelector(".design-grid").addEventListener("dblclick", event => {
         if (event.target.classList.contains("design-image") && event.target.classList.contains("zoomed")) {
             // If image is zoomed, remove the zoom
@@ -64,3 +64,4 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".design-right").forEach(details => details.classList.add("hidden"));
     }
 });
+
