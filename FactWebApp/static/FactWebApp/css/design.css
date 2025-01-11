@@ -8,9 +8,8 @@
 /* Design Item Layout */
 .design-item {
     display: grid;
-    grid-template-columns: 0% 73% 25%; /* Left, Center, Right layout */
-    align-items: center;
-    padding: 5px;
+    grid-template-columns: 0% 75% 25%; /* Left, Center, Right layout */
+    align-items: start;
     background-color: #fff;
     width: 100%; /* Center the grid within the container */
     margin: 5px 5px;
@@ -30,8 +29,8 @@
     grid-column: 2; /* Second column */
     display: flex;
     justify-content: start;
+    height: 500px;
     align-items: start;
-    padding: 10px;
     position: relative;
 }
 
@@ -47,12 +46,15 @@
 /* Right Section (Details View) */
 .design-right {
     grid-column: 3; /* Third column */
-    padding: 2px;
     background-color: transparent;
     position: relative;
     z-index: 2;
+    margin-left: 5px;
     transition: opacity 0.55s ease-in-out;
     vertical-align: top;
+}
+.design-right>h3{
+    margin-top: 0px;
 }
 
 /* Hidden Details Section */
@@ -74,7 +76,7 @@
     transition: transform 0.3s ease-in-out;
 }
 .design-container{
-    margin: 100px 100px;
+    margin: 100px 50px;
     
 }
 
