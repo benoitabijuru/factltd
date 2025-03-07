@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*d@m)=x^-x8=($)@_z+3(q7rgqh^))pir5q5)(emwhfwo7+)q!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*","fact.rw","factltd.onrender.com"]
+ALLOWED_HOSTS = ["*","factltd.onrender.com"]
 
 
 # Application definition
@@ -151,7 +151,7 @@ SECRET_KEY = 'django-insecure-*d@m)=x^-x8=($)@_z+3(q7rgqh^))pir5q5)(emwhfwo7+)q!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["*","fact.rw","factltd.onrender.com"]
+ALLOWED_HOSTS = ["*","factltd.onrender.com"]
 
 
 # Application definition
