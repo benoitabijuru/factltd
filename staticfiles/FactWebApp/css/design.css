@@ -1,0 +1,99 @@
+/* Main Grid Container */
+.design-grid {
+    display: grid;
+    gap: 0;
+    transition: all 0.3s ease; /* Add transition for smooth effect */
+}
+
+/* Design Item Layout */
+.design-item {
+    display: grid;
+    grid-template-columns: 0% 75% 25%; /* Left, Center, Right layout */
+    align-items: start;
+    background-color: #fff;
+    width: 100%; /* Center the grid within the container */
+    margin: 5px 5px;
+    opacity: 1; /* Ensure items are fully visible initially */
+    transition: opacity 0.3s ease-in-out; /* Add transition for smooth hide/show */
+}
+
+/* Left Section (Title and Location) */
+.design-left {
+    grid-column: 1; /* First column */
+    padding: 0px;
+    position: relative;
+}
+
+/* Center Section (Image Display) */
+.design-center {
+    grid-column: 2; /* Second column */
+    display: flex;
+    justify-content: start;
+    height: 500px;
+    align-items: start;
+    position: relative;
+}
+
+.design-center img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+/* Right Section (Details View) */
+.design-right {
+    grid-column: 3; /* Third column */
+    background-color: transparent;
+    position: relative;
+    z-index: 2;
+    margin-left: 5px;
+    transition: opacity 0.55s ease-in-out;
+    vertical-align: top;
+}
+.design-right>h3{
+    margin-top: 0px;
+}
+
+/* Hidden Details Section */
+.design-right.hidden {
+    display: none;
+    transition: opacity 0.55s ease-in-out;
+    vertical-align: top;
+}
+
+/* Hidden Design Item (when filtered out) */
+.design-item.hidden {
+    display: none;
+    transition: opacity 0.55s ease-in-out; 
+    vertical-align: top;
+}
+.zoomed {
+    transform: scale(1.0);
+    z-index: 9999;
+    transition: transform 0.3s ease-in-out;
+}
+.design-container{
+    margin: 100px 50px;
+    
+}
+
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .design-item {
+        grid-template-columns: 1fr; /* Stack sections vertically */
+        width: 90%; /* Adjust width */
+    }
+
+    .design-center {
+        justify-content: flex-start; /* Align image to the left */
+    }
+
+    .design-right {
+        margin-top: 15px;
+    }
+}

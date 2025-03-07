@@ -1,0 +1,65 @@
+/* Container styling */
+.videos-container {
+    padding: 10px;
+    max-width: 1200px;
+    margin: 20px 200px;
+    text-align: start;
+}
+
+.videos-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Grid styling */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Individual video item */
+.video-item {
+    background: #fff;
+    border: 1px solid #fff;
+    border-radius: 1px;
+    text-align: start;
+    width:100%;
+}
+
+/* Video styling */
+video {
+    width: 100%;
+    max-width: 300px; 
+    height: 200px;    
+    object-fit: cover; 
+    border-radius: 1px;
+    margin-bottom: 10px;
+}
+
+/* Title and description styling */
+h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+}

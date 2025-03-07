@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+.contact-container {
+    max-width: 600px;
+    margin-bottom:35px ;
+}
+
+.contact-container h1 {
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-container label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid#ccc;
+    border-radius: 5px;
+}
+
+.contact-container textarea {
+    resize: vertical;
+}
+
+.contact-container button {
+    font-family: 'Poppins', sans-serif;;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-container button:hover {
+    background-color: #0056b3;
+}
+
+.contact-container input[type="text"]::placeholder,
+.contact-container input[type="email"]::placeholder,
+.contact-container textarea::placeholder {
+    font-family: 'Poppins', sans-serif;;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    max-width: 1200px;
+}
+
+/* Left Section Styling */
+.left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    
+    border-radius: 5px;
+}
+
+.left-section img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Middle Section Styling (Contact Form) */
+.contact-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Right Section Styling */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.right-section h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.right-section p {
+    margin: 5px 0;
+}

@@ -1,0 +1,65 @@
+/* Basic reset and styling for the grid container */
+.news-container{
+    margin: auto;
+}
+
+.news-container>h1{
+    margin:auto;
+}
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Automatically adjusts to 3 or 4 columns */
+    gap: 10px; /* Space between the grid items */
+    padding: 10px;
+    justify-items: center; /* Center content within grid items */
+}
+
+/* Styling for individual news items */
+.news-item {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    padding: 10px;
+}
+
+/* Image styling */
+.news-item img {
+    width: 100%;  /* Makes images responsive */
+    height: 250px;
+    border-bottom: 1px solid #ddd;
+    object-fit: cover;  
+    max-height: 250px; 
+    margin-bottom: 10px;
+}
+
+/* Title and description styling */
+.news-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+    align-content: start;
+    align-items: start;
+}
+.news-item p {
+    font-size: 1rem;
+    color: #777;
+    align-content: start;
+    align-items: start;
+    justify-content: left;
+    margin-top: 0px;
+    margin-bottom: 5px;
+}
+
+/* Responsive design: Make it 3 columns on medium screens and 2 columns on smaller screens */
+@media (max-width: 900px) {
+    .news-grid {
+        grid-template-columns: repeat(1fr); /*1 columumns*/
+    }
+}
+
+@media (max-width: 600px) {
+    .news-grid {
+        grid-template-columns: repeat(1fr); /*1 columumns*/
+    }
+}

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*d@m)=x^-x8=($)@_z+3(q7rgqh^))pir5q5)(emwhfwo7+)q!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["13.60.31.4", "fact.rw","www.fact.rw", "127.0.0.1","0.0.0.0","factltd.onrender.com"]
+ALLOWED_HOSTS = ["*","fact.rw","factltd.onrender.com"]
 
 
 # Application definition
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'FactWeb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/var/lib/sqlite/db.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -151,8 +151,7 @@ SECRET_KEY = 'django-insecure-*d@m)=x^-x8=($)@_z+3(q7rgqh^))pir5q5)(emwhfwo7+)q!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["13.60.31.4", "fact.rw","www.fact.rw", "127.0.0.1","0.0.0.0","factltd.onrender.com"]
-
+ALLOWED_HOSTS = ["*","fact.rw","factltd.onrender.com"]
 
 
 # Application definition

@@ -1,0 +1,25 @@
+.research-container {
+    padding: 20px;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+.research-item img,
+.studies-item img,
+.tools-item img,
+.training-item img {
+    width: 100%;
+    height: 200px;
+}
+
+.research-item h3,
+.studies-item h3,
+.tools-item h3,
+.training-item h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
